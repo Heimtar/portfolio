@@ -40,13 +40,13 @@ function App() {
               <a
                 href="/resume.pdf"
                 download
-                className={`${styles.btn} styles.primary`}
+                className={`${styles.btn} ${styles.primary}`}
               >
                 {t.hero.btnResume}
               </a>
               <a
                 href="mailto:your-email@example.com"
-                className={`${styles.btn} styles.secondary`}
+                className={`${styles.btn} ${styles.secondary}`}
               >
                 {t.hero.btnContact}
               </a>
