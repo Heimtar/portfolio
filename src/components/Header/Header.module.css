@@ -2,13 +2,80 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
   background-color: var(--card-bg);
-  border: 1px solid var(--card-border);
   border-radius: 12px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 1.5rem auto;
+  
+  /* Изолируем контекст и выделяем ровно 1px под бегущую рамку */
+  position: relative;
+  overflow: hidden; 
+  padding: 1px;
+  z-index: 10;
+  
+  /* Убираем старый border, теперь рамка формируется градиентом */
+  border: none; 
+}
+
+/* Внутренняя подложка, которая перекрывает центр вращения и возвращает паддинги */
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border-radius: 11px; /* На 1px меньше, чтобы рамка легла идеально по контуру */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+/* СЛОЙ 1: Яркая, концентрированная бегущая рамка */
+.header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  pointer-events: none;
+  
+  /* Плотный конический градиент: золото занимает больше пространства для максимальной яркости */
+  background: conic-gradient(
+    from 0deg,
+    transparent 10%,
+    var(--accent-gold) 30%,
+    var(--accent-gold-hover) 50%,
+    var(--accent-gold) 70%,
+    transparent 90%
+  );
+  animation: rotateHeaderGlow 6s linear infinite; /* Плавное вращение за 6 секунд */
+}
+
+/* СЛОЙ 2: Тонкое, но концентрированное неоновое свечение строго под рамкой */
+.header::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+  pointer-events: none;
+  background: conic-gradient(
+    from 0deg,
+    transparent 10%,
+    var(--accent-gold) 30%,
+    var(--accent-gold-hover) 50%,
+    var(--accent-gold) 70%,
+    transparent 90%
+  );
+  filter: blur(12px); /* Уменьшили радиус размытия, чтобы неон сидел плотно вокруг рамки */
+  opacity: 0.6; /* Подняли плотность свечения для сочности */
+  animation: rotateHeaderGlow 6s linear infinite;
 }
 
 .logo {
@@ -20,6 +87,25 @@
 
 .dot {
   color: var(--accent-gold);
+}
+
+.navBlock {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.writeLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--transition-smooth);
+}
+
+.writeLink:hover {
+  color: var(--accent-gold-hover);
 }
 
 .langBtn {
@@ -38,7 +124,6 @@
   transition: var(--transition-smooth);
 }
 
-/* Элегантный ховер в стиле премиальных девайсов */
 .langBtn:hover {
   border-color: var(--card-border);
   color: var(--text-main);
@@ -52,23 +137,31 @@
 .divider {
   color: var(--card-border);
 }
-.navBlock {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
+
+/* АНИМАЦИЯ: Вращение градиента контура */
+@keyframes rotateHeaderGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
-.writeLink {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: var(--transition-smooth);
-}
-
-.writeLink:hover {
-  color: var(--accent-gold-hover);
+/* Мобильная адаптация: на смартфонах отключаем вращение, заменяя на статичную золотую рамку */
+@media (max-width: 900px) {
+  .header {
+    border: 1px solid var(--accent-gold);
+    padding: 0;
+  }
+  .header::before,
+  .header::after {
+    display: none !important;
+  }
+  .contentWrapper {
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+  }
 }
 
 @media (max-width: 600px) {
