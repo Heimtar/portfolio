@@ -1,0 +1,27 @@
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+/* Элегантный ховер в стиле дорогих SaaS: карточка плавно подсвечивается золотом и приподнимается */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 12px 30px rgba(197, 168, 128, 0.04);
+}
+
+/* Мобильная адаптация: убираем подъем при ховере на смартфонах, чтобы интерфейс не дергался при скролле пальцем */
+@media (max-width: 900px) {
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
