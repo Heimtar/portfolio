@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
 import { Header } from "./components/Header/Header";
 import { BentoGrid } from "./components/BentoGrid/BentoGrid";
 import { BentoCard } from "./components/BentoCard/BentoCard";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
+import { Modal } from "./components/Modal/Modal";
 import { useLanguage } from "./context/useLanguage";
 import styles from "./App.module.css";
 
 function App() {
   const { t } = useLanguage();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    // Проверяем, показывалась ли уже модалка в этой сессии браузера
+    const isModalShown = sessionStorage.getItem("portfolio_modal_shown");
+
+    if (!isModalShown) {
+      // Запускаем таймер на 12 секунд (12000 мс)
+      const timer = setTimeout(() => {
+        setIsModalOpen(true);
+        sessionStorage.setItem("portfolio_modal_shown", "true");
+      }, 12000);
+
+      // Железобетонное правило: очищаем таймер при размонтировании
+      return () => clearTimeout(timer);
+    }
+  }, []); // Пустой массив зависимостей — сработает строго 1 раз при монтировании
 
   return (
     <div
@@ -18,8 +37,16 @@ function App() {
         padding: "1rem 1.5rem",
       }}
     >
-      {/* 1. Изолированная шапка */}
       <Header />
+
+      {/* Рендерим модалку и прокидываем в неё стейты и тексты */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={t.modalTitle}
+        description={t.modalDesc}
+        btnText={t.modalBtn}
+      />
 
       <main>
         {/* 2. Контейнер Bento Grid */}

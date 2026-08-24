@@ -26,6 +26,9 @@ export interface TranslationSchema {
   projectsTitle: string;
   sectionPersonal: string;
   sectionCommercial: string;
+  modalTitle: string;
+  modalDesc: string;
+  modalBtn: string;
   contacts: {
     title: string;
     cta: string;
@@ -127,6 +130,10 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         isPlaceholder: true,
       },
     ],
+    modalTitle: "Обсудим ваш проект?",
+    modalDesc:
+      "Ищете надежного разработчика для реализации MVP или усиления команды? Напишите мне на почту, отправьте ТЗ или ваши пожелания — я оперативно изучу задачу и предложу техническое решение.",
+    modalBtn: "Отправить ТЗ / Написать",
   },
   en: {
     hero: {
@@ -218,5 +225,9 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         isPlaceholder: true,
       },
     ],
+    modalTitle: "Let's discuss your project",
+    modalDesc:
+      "Looking for a reliable developer to build an MVP or strengthen your team? Drop me an email, send your specifications or requirements — I will quickly review the task and offer a technical solution.",
+    modalBtn: "Send Specifications / Contact",
   },
 };
