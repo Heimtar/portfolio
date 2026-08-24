@@ -1,0 +1,121 @@
+/* Классы-маяки для управления размерами Bento-плиток на десктопе */
+.span2 {
+  grid-column: span 2;
+}
+
+.span3 {
+  grid-column: span 3;
+}
+
+/* Стили для текстового контента внутри обычных Bento-карточек (Hero, Навыки, Контакты) */
+.badge {
+  color: var(--accent-gold);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.heroTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.accent {
+  color: var(--accent-gold);
+}
+
+.text {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.heroText {
+  margin-bottom: 2rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.primary {
+  background-color: var(--accent-gold);
+  color: #000;
+}
+
+.primary:hover {
+  background-color: var(--accent-gold-hover);
+}
+
+.secondary {
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+}
+
+.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: var(--text-muted);
+}
+
+.sectionTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.contactContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerLink {
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+
+.footerLink:hover {
+  color: var(--accent-gold);
+}
+
+/* Адаптивность: на мобилках сбрасываем растяжение колонок под 1-колоночную ленту */
+@media (max-width: 900px) {
+  .span2, .span3 {
+    grid-column: span 1;
+  }
+  
+  .contactContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
