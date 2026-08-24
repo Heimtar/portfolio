@@ -6,7 +6,10 @@
 .span3 {
   grid-column: span 3;
 }
-
+.span3:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
 /* Стили для текстового контента внутри обычных Bento-карточек (Hero, Навыки, Контакты) */
 .badge {
   color: var(--accent-gold);
@@ -110,10 +113,11 @@
 
 /* Адаптивность: на мобилках сбрасываем растяжение колонок под 1-колоночную ленту */
 @media (max-width: 900px) {
-  .span2, .span3 {
+  .span2,
+  .span3 {
     grid-column: span 1;
   }
-  
+
   .contactContent {
     flex-direction: column;
     align-items: flex-start;
