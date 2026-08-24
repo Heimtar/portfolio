@@ -9,6 +9,8 @@
   flex-direction: column;
   justify-content: space-between;
   transition: var(--transition-smooth);
+  cursor: default;
+  user-select: none;
 }
 
 /* Слой контента возвращает карточке внутренние паддинги и перекрывает вращающийся центр градиента */
