@@ -3,25 +3,52 @@
   border: 1px solid var(--card-border);
   border-radius: 16px;
   padding: 2rem;
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition-smooth);
+  transition: border-color 0.4s ease;
 }
 
-/* Элегантный ховер в стиле дорогих SaaS: карточка плавно подсвечивается золотом и приподнимается */
+/* При ховере деликатно подсвечиваем всю границу карточки золотом */
 .card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-gold);
-  box-shadow: 0 12px 30px rgba(197, 168, 128, 0.04);
+  border-color: rgba(197, 168, 128, 0.4);
 }
 
-/* Мобильная адаптация: убираем подъем при ховере на смартфонах, чтобы интерфейс не дергался при скролле пальцем */
+/* Слой контента поднимаем по z-index, чтобы текст не перекрывался эффектами */
+.contentWrapper {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Слой неонового золотого свечения */
+.glowEffect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* Чтобы слой не мешал кликам по ссылкам */
+  opacity: var(--glow-opacity);
+  transition: opacity 0.4s ease;
+
+  /* Радиальный градиент: мягкое золото, плавно уходящее в прозрачность на расстоянии 150px */
+  background: radial-gradient(
+    200px circle at var(--mouse-x) var(--mouse-y),
+    rgba(197, 168, 128, 0.15),
+    transparent 80%
+  );
+}
+
+/* Мобильная адаптация: полностью выключаем расчет координат на смартфонах, чтобы экономить процессор */
 @media (max-width: 900px) {
-  .card:hover {
-    transform: none;
-    box-shadow: none;
+  .glowEffect {
+    display: none;
   }
 }
