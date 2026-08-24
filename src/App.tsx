@@ -76,7 +76,6 @@ function App() {
                 {/* Выводим часть тегов для красоты интерфейса плашки */}
                 <span
                   style={{
-                    fontFamily: "monospace",
                     fontSize: "0.8rem",
                     backgroundColor: "rgba(255,255,255,0.02)",
                     border: "1px solid var(--card-border)",
@@ -88,7 +87,6 @@ function App() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "monospace",
                     fontSize: "0.8rem",
                     backgroundColor: "rgba(255,255,255,0.02)",
                     border: "1px solid var(--card-border)",
@@ -100,7 +98,6 @@ function App() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "monospace",
                     fontSize: "0.8rem",
                     backgroundColor: "rgba(255,255,255,0.02)",
                     border: "1px solid var(--card-border)",
@@ -112,7 +109,6 @@ function App() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "monospace",
                     fontSize: "0.8rem",
                     backgroundColor: "rgba(255,255,255,0.02)",
                     border: "1px solid var(--card-border)",

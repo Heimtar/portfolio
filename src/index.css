@@ -4,7 +4,7 @@
   --card-border: #1e293b;
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  --accent-gold: #c5a880; 
+  --accent-gold: #c5a880;
   --accent-gold-hover: #e5c158;
   --success: #10b981;
   --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -19,6 +19,15 @@
 body {
   background-color: var(--bg-color) !important; /* Принудительно красим фон */
   color: var(--text-main);
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: "Jura", sans-serif !important;
   min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Добавляем легкое техно-сужение или расширение для всех заголовков на сайте */
+h1,
+h2,
+h3 {
+  letter-spacing: 0.04em;
 }
