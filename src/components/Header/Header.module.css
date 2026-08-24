@@ -1,0 +1,54 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1.5rem auto;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.1em;
+  color: var(--text-main);
+}
+
+.dot {
+  color: var(--accent-gold);
+}
+
+.langBtn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+/* Элегантный ховер в стиле премиальных девайсов */
+.langBtn:hover {
+  border-color: var(--card-border);
+  color: var(--text-main);
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+.active {
+  color: var(--accent-gold);
+}
+
+.divider {
+  color: var(--card-border);
+}

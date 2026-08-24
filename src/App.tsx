@@ -1,15 +1,20 @@
+import { Header } from './components/Header/Header';
 import { useLanguage } from './context/useLanguage';
 
 function App() {
-  const { language, toggleLanguage, t } = useLanguage();
+  const { t } = useLanguage();
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif', color: '#fff', background: '#0b0c10', minHeight: '100vh' }}>
-      <p>Текущий язык: {language.toUpperCase()}</p>
-      <h1>{t.hero.title} {t.hero.accentName}</h1>
-      <button onClick={toggleLanguage} style={{ padding: '0.5rem 1rem', cursor: 'pointer' }}>
-        Change Language / Сменить язык
-      </button>
+    <div style={{ maxWidth: '1200px', width: '100%', margin: '0 auto', padding: '1rem' }}>
+      {/* Подключаем нашу готовую шапку */}
+      <Header />
+      
+      {/* Сюда в следующем шаге встанет контейнер Bento-сетки */}
+      <main style={{ padding: '1rem 0' }}>
+        <h2 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>
+          {t.projectsTitle}
+        </h2>
+      </main>
     </div>
   );
 }
