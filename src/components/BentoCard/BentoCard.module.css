@@ -1,54 +1,111 @@
 .card {
   background-color: var(--card-bg);
-  border: 1px solid var(--card-border);
+  border: 1px solid var(--card-border); /* Базовая статичная рамка */
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1px; /* Выделяем ровно 1px под нашу бегущую рамку */
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: border-color 0.4s ease;
+  transition: var(--transition-smooth);
 }
 
-/* При ховере деликатно подсвечиваем всю границу карточки золотом */
-.card:hover {
-  border-color: rgba(197, 168, 128, 0.4);
-}
-
-/* Слой контента поднимаем по z-index, чтобы текст не перекрывался эффектами */
+/* Слой контента возвращает карточке внутренние паддинги и перекрывает вращающийся центр градиента */
 .contentWrapper {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
+  background-color: var(--card-bg); /* Изолируем темный фон внутри */
+  border-radius: 15px; /* Чуть меньше общего радиуса карточки, чтобы рамка легла ровно */
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* Слой неонового золотого свечения */
+/* Базовые настройки для слоев рамки (по умолчанию скрыты) */
+.borderGlow,
+.borderBlur {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  /* Конический золотой градиент, который будет вращаться по кругу */
+  background: conic-gradient(
+    from 0deg,
+    transparent 20%,
+    var(--accent-gold) 40%,
+    var(--accent-gold-hover) 50%,
+    var(--accent-gold) 60%,
+    transparent 80%
+  );
+}
+
+/* Второй слой рамки сильно размываем, чтобы получить эффект неонового свечения вовне */
+.borderBlur {
+  z-index: 0;
+  filter: blur(20px);
+}
+
+/* Включаем рамку и свечение ТОЛЬКО при наведении */
+.card:hover {
+  border-color: transparent; /* Скрываем базовую серую рамку */
+  transform: translateY(-4px);
+}
+
+.card:hover .borderGlow,
+.card:hover .borderBlur {
+  opacity: 1;
+  animation: rotateGlow 4s linear infinite; /* Бесконечное вращение за 4 секунды */
+}
+
+/* Внутренний свет от мышки (работает параллельно) */
 .glowEffect {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  pointer-events: none; /* Чтобы слой не мешал кликам по ссылкам */
+  z-index: 2;
+  pointer-events: none;
   opacity: var(--glow-opacity);
   transition: opacity 0.4s ease;
-
-  /* Радиальный градиент: мягкое золото, плавно уходящее в прозрачность на расстоянии 150px */
   background: radial-gradient(
     200px circle at var(--mouse-x) var(--mouse-y),
-    rgba(197, 168, 128, 0.15),
+    rgba(197, 168, 128, 0.12),
     transparent 80%
   );
 }
 
-/* Мобильная адаптация: полностью выключаем расчет координат на смартфонах, чтобы экономить процессор */
+/* Анимация вращения градиента */
+@keyframes rotateGlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Мобильная адаптация: отключаем тяжелые анимации и размытие на смартфонах */
 @media (max-width: 900px) {
+  .card:hover {
+    transform: none;
+  }
+  .borderGlow,
+  .borderBlur,
   .glowEffect {
-    display: none;
+    display: none !important;
+  }
+  .card:hover {
+    border-color: var(
+      --accent-gold
+    ); /* На мобилках при тапе просто подсветим рамку */
   }
 }
