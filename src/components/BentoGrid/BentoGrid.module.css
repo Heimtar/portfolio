@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 равные колонки на десктопе */
+  gap: 1.25rem; /* Аккуратные отступы между плитками в стиле Victory Group */
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* Мобильная адаптация: когда экран смартфона меньше 900px, перестраиваем всё в 1 колонку */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
