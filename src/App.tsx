@@ -1,3 +1,4 @@
+import React from "react";
 import { Header } from "./components/Header/Header";
 import { BentoGrid } from "./components/BentoGrid/BentoGrid";
 import { BentoCard } from "./components/BentoCard/BentoCard";
@@ -17,7 +18,7 @@ function App() {
         padding: "1rem 1.5rem",
       }}
     >
-      {/* 1. Наша изолированная шапка */}
+      {/* 1. Изолированная шапка */}
       <Header />
 
       <main>
@@ -123,9 +124,63 @@ function App() {
           </BentoCard>
 
           {/* ПЛИТКИ 3-10: ЦИКЛ ПО ПРОЕКТАМ ИЗ НАШЕЙ БАЗЫ ДАННЫХ */}
-          {t.projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
+          {t.projects.map((project, index) => {
+            // Флаг: проверяем, является ли текущий проект ПЕРВЫМ коммерческим в массиве
+            // В нашей структуре данных коммерческие контракты начинаются с 5-го индекса (после 5 петов)
+            const isFirstCommercial = index === 5;
+            const isFirstPersonal = index === 0;
+
+            return (
+              <React.Fragment key={index}>
+                {/* Заголовок перед самым первым пет-проектом */}
+                {isFirstPersonal && (
+                  <div
+                    className={styles.span3}
+                    style={{ padding: "1rem 0 0.5rem 0" }}
+                  >
+                    <h3
+                      style={{
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        color: "var(--accent-gold)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      // {t.sectionPersonal}
+                    </h3>
+                  </div>
+                )}
+
+                {/* Полноширинный разделитель перед первым коммерческим проектом */}
+                {isFirstCommercial && (
+                  <div
+                    className={styles.span3}
+                    style={{
+                      padding: "2rem 0 0.5rem 0",
+                      borderTop: "1px solid var(--card-border)",
+                      marginTop: "1rem",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        color: "var(--accent-gold)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      // {t.sectionCommercial}
+                    </h3>
+                  </div>
+                )}
+
+                {/* Сама карточка проекта */}
+                <ProjectCard project={project} />
+              </React.Fragment>
+            );
+          })}
 
           {/* ПЛИТКА 11: КОНТАКТЫ / ПОДВАЛ (Занимает все 3 колонки) */}
           <BentoCard extraLayout={styles.span3}>

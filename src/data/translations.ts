@@ -24,6 +24,8 @@ export interface TranslationSchema {
     stackTitle: string;
   };
   projectsTitle: string;
+  sectionPersonal: string;
+  sectionCommercial: string;
   contacts: {
     title: string;
     cta: string;
@@ -50,6 +52,8 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       stackTitle: "Ключевой стек",
     },
     projectsTitle: "Проекты и кейсы",
+    sectionPersonal: "Личные и пет-проекты",
+    sectionCommercial: "Коммерческие контракты",
     contacts: {
       title: "Контакты",
       cta: "Обсудить проект",
@@ -128,7 +132,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     hero: {
       badge: "● Available for commercial contracts",
       title: "Hi, I am ",
-      accentName: "Heimtar",
+      accentName: "Roman",
       description:
         "Junior+ Frontend Developer. Specialized in implementing complex business logic, managing asynchronous data streams, and rapid MVP development. Focused on performance and strict engineering standards.",
       btnResume: "Download Resume PDF",
@@ -141,6 +145,8 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       stackTitle: "Key Stack",
     },
     projectsTitle: "Projects & Case Studies",
+    sectionPersonal: "Personal & Pet Projects",
+    sectionCommercial: "Commercial Contracts",
     contacts: {
       title: "Contacts",
       cta: "Discuss a project",
