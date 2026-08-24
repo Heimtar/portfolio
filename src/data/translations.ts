@@ -37,7 +37,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     hero: {
       badge: "● Доступен для коммерческих контрактов",
       title: "Привет, я ",
-      accentName: "Heimtar",
+      accentName: "Роман",
       description:
         "Junior+ Frontend Разработчик. Специализируюсь на реализации сложной бизнес-логики, управлении асинхронными потоками данных и быстрой сборке MVP-решений. Фокусируюсь на производительности и строгих стандартах разработки.",
       btnResume: "Скачать резюме PDF",
@@ -53,32 +53,32 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     contacts: {
       title: "Контакты",
       cta: "Обсудить проект",
-      location: "Локация: UTC+3, Удаленная работа",
+      location: "Локация: Архангельск. GMT+3, Удаленная работа",
     },
     projects: [
       {
         title: "Crypto Dashboard",
         description:
           "Финансовый аналитический терминал MVP. Двухколоночный Grid-интерфейс, декларативные графики (Recharts), кастомный слой асинхронных данных с кэшированием (TTL) и расчетом PnL без мутации состояния.",
-        tags: ["React 18", "TypeScript", "Recharts", "CSS Modules"],
+        tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
         title: "Smart Habit Tracker",
         description:
           "SaaS-трекер с геймификацией. Отказоустойчивый расчет временных интервалов и стриков (date-fns), RPG-механика прогрессии пользователей, ленивая инициализация localStorage и защита от всплытия событий.",
-        tags: ["React 18", "TypeScript", "date-fns", "CSS Modules"],
+        tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
         title: "RPG Character Manager",
         description:
           "Инструмент управления данными. Работа со сложными вложенными структурами данных, валидация форм на лету, динамический расчет игровых бонусов и полная поддержка управления с клавиатуры (:focus-visible).",
-        tags: ["React 18", "TypeScript", "Vite", "A11y"],
+        tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
       },
       // Заглушки личных проектов
       {
@@ -99,26 +99,26 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       },
       // Психологические триггеры - коммерческие контракты
       {
-        title: "Commercial Contract",
+        title: "Коммерческий проект",
         description:
-          "Разработка архитектуры фронтенда под бизнес-задачи клиента. Оптимизация процессов и масштабирование.",
-        tags: ["Коммерческий контракт"],
+          "Сайт-визитка строительно монтажной бригады. Разработка архитектуры фронтенда под бизнес-задачи клиента. Оптимизация процессов и масштабирование.",
+        tags: ["В разработке"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
-        title: "Commercial Contract",
+        title: "Коммерческий проект",
         description:
-          "Реализация интерфейса коммерческого продукта. Интеграция API и контроль отказоустойчивости.",
-        tags: ["Коммерческий контракт"],
+          "Салон грумминга. Реализация интерфейса коммерческого продукта. Интеграция API и контроль отказоустойчивости.",
+        tags: ["В разработке"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
-        title: "Commercial Contract",
+        title: "Коммерческий проект",
         description:
           "Разработка клиентского сервиса по техническому заданию заказчика. Контроль качества кода.",
-        tags: ["Коммерческий контракт"],
+        tags: ["В разработке"],
         demoUrl: "#",
         isPlaceholder: true,
       },
@@ -144,32 +144,32 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     contacts: {
       title: "Contacts",
       cta: "Discuss a project",
-      location: "Location: UTC+3, Remote work",
+      location: "Location: Arkhangelsk, UTC+3, Remote work",
     },
     projects: [
       {
         title: "Crypto Dashboard",
         description:
           "Financial Analytics Terminal MVP. Two-column Grid interface, declarative charts (Recharts), a custom asynchronous data layer with caching (TTL), and immutable PnL mathematical calculations.",
-        tags: ["React 18", "TypeScript", "Recharts", "CSS Modules"],
+        tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
         title: "Smart Habit Tracker",
         description:
           "Gamified SaaS Habit Tracker. Resilient calculation of time intervals and streaks (date-fns), RPG user progression mechanics, lazy initialization of localStorage, and event propagation protection.",
-        tags: ["React 18", "TypeScript", "date-fns", "CSS Modules"],
+        tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
         title: "RPG Character Manager",
         description:
           "Data Management Tool. Handling complex nested data structures, on-the-fly form validation, dynamic calculations, and full keyboard navigation support (:focus-visible).",
-        tags: ["React 18", "TypeScript", "Vite", "A11y"],
+        tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
         demoUrl: "https://github.io",
-        codeUrl: "https://github.com",
+        codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
       },
       {
         title: "Pet Project #4",
@@ -190,7 +190,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       {
         title: "Commercial Contract",
         description:
-          "Frontend architecture development tailored for business requirements. Process optimization and scaling.",
+          "Business card website for a construction and installation team. Frontend architecture development tailored for business requirements. Process optimization and scaling.",
         tags: ["Commercial Contract"],
         demoUrl: "#",
         isPlaceholder: true,
@@ -198,7 +198,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       {
         title: "Commercial Contract",
         description:
-          "Commercial product interface implementation. API integration and resilience control.",
+          "Grooming salon. Commercial product interface implementation. API integration and resilience control.",
         tags: ["Commercial Contract"],
         demoUrl: "#",
         isPlaceholder: true,

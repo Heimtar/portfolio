@@ -84,7 +84,7 @@ function App() {
                     borderRadius: "4px",
                   }}
                 >
-                  React 19
+                  React 18/19
                 </span>
                 <span
                   style={{
@@ -109,6 +109,18 @@ function App() {
                   }}
                 >
                   Git Control
+                </span>
+                <span
+                  style={{
+                    fontFamily: "monospace",
+                    fontSize: "0.8rem",
+                    backgroundColor: "rgba(255,255,255,0.02)",
+                    border: "1px solid var(--card-border)",
+                    padding: "0.25rem 0.5rem",
+                    borderRadius: "4px",
+                  }}
+                >
+                  JavaScript (ES6+)
                 </span>
               </div>
             </div>
