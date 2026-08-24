@@ -1,75 +1,60 @@
-# React + TypeScript + Vite
+# Heimtar | Frontend Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Современный, адаптивный одностраничный сайт-визитка (Landing Page) бизнес-уровня. Спроектирован по методологии **Bento Grid Layout** в строгом визуальном стиле _Tech Premium_ (космический антрацит, матовое золото, интерактивные микро-анимации).
 
-Currently, two official plugins are available:
+Проект разработан с фокусом на чистоту JSX-разметки, изоляцию стилей и строгую архитектуру верхнего уровня.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Технологический стек и Архитектура
 
-## React Compiler
+При разработке MVP были сознательно исключены тяжелые сторонние библиотеки и utility-first фреймворки (Tailwind) для демонстрации глубоких навыков нативной верстки и паттернов React.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Core:** React 18/19, TypeScript, Vite (SPA-архитектура).
+- **Стилизация:** Нативный CSS3, **CSS-модули (`*.module.css`)** для полной изоляции стилей компонентов и предотвращения конфликтов в каскаде, CSS-переменные (Design Tokens).
+- **Интернационализация (i18n):** Архитектура мультиязычности (**RU / EN**) реализована с нуля на чистом **React Context** (разделена на атомарные файлы: `Context`, `Provider`, кастомный хук `useLanguage` для полной совместимости с Vite Fast Refresh).
+- **Шрифты:** Оптимизированная локальная поставка футуристичного шрифта _Jura_ через пакетную экосистему **Fontsource** на верхнем уровне бандла (`main.tsx`).
+- **UX/UI Интерактив:**
+  - Динамический расчет координат курсора мыши (`onMouseMove`) с передачей координат в CSS-переменные для генерации яркого радиального градиента (Hover Glow Effect).
+  - Сложная анимация бегущей рамки по контуру карточек на базе конического градиента (`conic-gradient`) и двухслойного размытия (`filter: blur()`).
+  - Полный запрет на хаотичное выделение системного текста при движении мыши (`user-select: none`).
 
-## Expanding the ESLint configuration
+## Структура проекта (`src/`)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Репозиторий следует компонентному подходу с жестким разделением логики, данных и представления:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/          # Изолированные UI-компоненты
+│   ├── BentoGrid/       # Сетка-контейнер (CSS Grid Layout)
+│   ├── BentoCard/       # Базовая плитка с hover-анимациями и логикой мыши
+│   ├── Header/          # Шапка сайта с переключателем i18n
+│   └── ProjectCard/     # Карточка проектов с условным рендером заглушек
+├── context/             # Архитектурный слой локализации (React Context)
+├── data/                # Строго типизированные B2B-тексты и переводы (TS-объекты)
+├── App.tsx              # Финальная сборка Bento-структуры
+└── main.tsx             # Точка входа, подключение Fontsource и провайдеров
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Локальное развертывание
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Для запуска проекта в локальном окружении разработки выполните следующие команды:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# 1. Клонировать репозиторий
+git clone https://github.com/Heimtar/portfolio.git
 
+# 2. Перейти в папку проекта
+cd portfolio
+
+# 3. Установить зависимости
+npm install
+
+# 4. Запустить локальный сервер разработки
+npm run dev
 ```
+
+## Стандарты разработки (Git Hygiene)
+
+Управление репозиторием ведется в строгом соответствии с инженерными практиками:
+
+- **Conventional Commits:** Все сообщения коммитов структурированы по типам (`feat:`, `fix:`, `refactor:`, `style:`, `chore:`).
+- **Микро-коммиты:** Фиксация изменений происходит атомарно для каждого логического шага, сохраняя историю разработки чистой и прозрачной.
