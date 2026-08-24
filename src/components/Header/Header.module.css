@@ -52,3 +52,27 @@
 .divider {
   color: var(--card-border);
 }
+.navBlock {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.writeLink {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: var(--transition-smooth);
+}
+
+.writeLink:hover {
+  color: var(--accent-gold-hover);
+}
+
+@media (max-width: 600px) {
+  .navBlock {
+    gap: 0.75rem;
+  }
+}
