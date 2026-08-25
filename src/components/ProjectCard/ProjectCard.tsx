@@ -1,5 +1,5 @@
 import React from 'react';
-import { BentoCard } from '../BentoCard/BentoCard'; 
+import { BentoCard } from '../BentoCard/BentoCard';
 import type { ProjectData } from '../../data/translations';
 import styles from './ProjectCard.module.css';
 
@@ -8,9 +8,8 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const { title, description, tags, demoUrl, codeUrl, isPlaceholder } = project;
+  const { title, descriptionUser, descriptionTech, tags, demoUrl, codeUrl, isPlaceholder } = project;
 
-  // Если это заглушка, навешиваем специальный класс для стилизации
   const cardContentClass = isPlaceholder 
     ? `${styles.content} ${styles.placeholder}` 
     : styles.content;
@@ -19,7 +18,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     <BentoCard>
       <div className={cardContentClass}>
         <div>
-          {/* Теги технологий сверху карточки */}
+          {/* Теги технологий сверху */}
           <div className={styles.tags}>
             {tags.map((tag, index) => (
               <span key={index} className={styles.tag}>
@@ -29,10 +28,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </div>
 
           <h3 className={styles.title}>{title}</h3>
-          <p className={styles.description}>{description}</p>
+          
+          {/* 1. ОПИСАНИЕ ДЛЯ КЛИЕНТА (Бизнес-уровень) */}
+          <p className={styles.descriptionUser}>{descriptionUser}</p>
+          
+          {/* Технологический маркер-разделитель (показываем только для реальных проектов) */}
+          {!isPlaceholder && (
+            <div className={styles.techDivider}>// Engineering Spec:</div>
+          )}
+          
+          {/* 2. ОПИСАНИЕ ДЛЯ ТИМЛИДА (Технический уровень) */}
+          <p className={styles.descriptionTech}>{descriptionTech}</p>
         </div>
 
-        {/* Ссылки показываем только для реальных проектов */}
+        {/* Интерактивный подвал карточки */}
         {!isPlaceholder ? (
           <div className={styles.links}>
             <a href={demoUrl} target="_blank" rel="noopener noreferrer" className={styles.linkDemo}>

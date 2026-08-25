@@ -1,7 +1,8 @@
 // Описываем строгий тип для карточки проекта
 export interface ProjectData {
   title: string;
-  description: string;
+  descriptionUser: string;
+  descriptionTech: string;
   tags: string[];
   demoUrl: string;
   codeUrl?: string; // необязательно для заглушек
@@ -65,24 +66,30 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     projects: [
       {
         title: "Crypto Dashboard",
-        description:
-          "Финансовый аналитический терминал MVP. Двухколоночный Grid-интерфейс, декларативные графики (Recharts), кастомный слой асинхронных данных с кэшированием (TTL) и расчетом PnL без мутации состояния.",
+        descriptionUser:
+          "Удобный финансовый терминал для отслеживания стоимости криптовалют в реальном времени. Помогает инвесторам быстро анализировать рынок, видеть изменения цен на наглядных графиках и рассчитывать прибыль без сложных таблиц.",
+        descriptionTech:
+          "Финансовый MVP-интерфейс. Двухколоночный Grid, декларативные графики (Recharts), кастомный слой асинхронных данных с кэшированием (TTL) и иммутабельным расчетом PnL без мутации стейта.",
         tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
         demoUrl: "https://github.io",
         codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
         title: "Smart Habit Tracker",
-        description:
-          "SaaS-трекер с геймификацией. Отказоустойчивый расчет временных интервалов и стриков (date-fns), RPG-механика прогрессии пользователей, ленивая инициализация localStorage и защита от всплытия событий.",
+        descriptionUser:
+          "Интерактивный трекер привычек с элементами игры. Мотивирует пользователей не бросать рутинные задачи, превращая ежедневные полезные действия в опыт и прокачку виртуального персонажа, наглядно показывая прогресс за недели.",
+        descriptionTech:
+          "SaaS-трекер с геймификацией. Отказоустойчивый расчет временных интервалов и стриков (date-fns), RPG-механика прогрессии, ленивая инициализация localStorage и защита от всплытия событий.",
         tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
         demoUrl: "https://github.io",
         codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
         title: "RPG Character Manager",
-        description:
-          "Инструмент управления данными. Работа со сложными вложенными структурами данных, валидация форм на лету, динамический расчет игровых бонусов и полная поддержка управления с клавиатуры (:focus-visible).",
+        descriptionUser:
+          "Профессиональный инструмент для настольных игр, позволяющий мгновенно создавать, редактировать и рассчитывать параметры игровых персонажей. Избавляет от бумажной рутины, автоматически вычисляя все бонусы характеристик на лету.",
+        descriptionTech:
+          "Инструмент управления комплексными структурами данных. Валидация форм на лету, динамический расчет зависимых параметров и полная поддержка доступности для управления с клавиатуры (:focus-visible).",
         tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
         demoUrl: "https://github.io",
         codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
@@ -90,42 +97,50 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       // Заглушки личных проектов
       {
         title: "Личный проект #4",
-        description:
+        descriptionUser:
           "Проектирование и разработка архитектуры следующего MVP-сервиса.",
+        descriptionTech: "Архитектурное планирование.",
         tags: ["В разработке"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
         title: "Личный проект #5",
-        description:
+        descriptionUser:
           "Интеграция дополнительных инструментов и расширение стека решений.",
+        descriptionTech: "Архитектурное планирование.",
         tags: ["В разработке"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       // Психологические триггеры - коммерческие контракты
       {
-        title: "Коммерческий проект",
-        description:
-          "Сайт-визитка строительно монтажной бригады. Разработка архитектуры фронтенда под бизнес-задачи клиента. Оптимизация процессов и масштабирование.",
-        tags: ["В разработке"],
+        title: "Commercial Contract",
+        descriptionUser:
+          "Разработка масштабируемого интерфейса под индивидуальные бизнес-задачи заказчика. Оптимизация внутренних процессов компании.",
+        descriptionTech:
+          "Разработка фронтенд-архитектуры коммерческого продукта. Интеграция API, контроль отказоустойчивости и качества кода по ТЗ.",
+        tags: ["Коммерческий контракт"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
-        title: "Коммерческий проект",
-        description:
-          "Салон грумминга. Реализация интерфейса коммерческого продукта. Интеграция API и контроль отказоустойчивости.",
-        tags: ["В разработке"],
+        title: "Commercial Contract",
+        descriptionUser:
+          "Интеграция клиентских сервисов, проектирование логики взаимодействия с пользователем и обеспечение стабильности веб-приложения под нагрузкой.",
+        descriptionTech:
+          "Реализация интерфейса коммерческого продукта, интеграция защищенных API-потоков и оптимизация производительности компонентов.",
+        tags: ["Коммерческий контракт"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
-        title: "Коммерческий проект",
-        description:
-          "Разработка клиентского сервиса по техническому заданию заказчика. Контроль качества кода.",
-        tags: ["В разработке"],
+        title: "Commercial Contract",
+        descriptionUser:
+          "Создание отказоустойчивого веб-решения по техническому заданию клиента с фокусом на высокую скорость работы интерфейса и удобство конечных пользователей.",
+        descriptionTech:
+          "Клиентская разработка корпоративного сервиса, аудит кодовой базы, оптимизация рендеринга и рефакторинг легаси-структур.",
+        tags: ["Коммерческий контракт"],
         demoUrl: "#",
         isPlaceholder: true,
       },
@@ -162,7 +177,9 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
     projects: [
       {
         title: "Crypto Dashboard",
-        description:
+        descriptionUser:
+          "A convenient financial terminal for tracking cryptocurrency rates in real-time. It helps investors quickly analyze the market, view price changes on clean charts, and calculate profits without complex spreadsheets.",
+        descriptionTech:
           "Financial Analytics Terminal MVP. Two-column Grid interface, declarative charts (Recharts), a custom asynchronous data layer with caching (TTL), and immutable PnL mathematical calculations.",
         tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
         demoUrl: "https://github.io",
@@ -170,15 +187,19 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       },
       {
         title: "Smart Habit Tracker",
-        description:
-          "Gamified SaaS Habit Tracker. Resilient calculation of time intervals and streaks (date-fns), RPG user progression mechanics, lazy initialization of localStorage, and event propagation protection.",
+        descriptionUser:
+          "A gamified SaaS habit tracker. It motivates users to stay consistent with routine tasks by turning daily beneficial actions into experience points and progression for a virtual character, visually displaying weekly progress.",
+        descriptionTech:
+          "Gamified SaaS Habit Tracker MVP. Resilient calculation of time intervals and streaks (date-fns), RPG user progression mechanics, lazy initialization of localStorage, and event propagation protection.",
         tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
         demoUrl: "https://github.io",
         codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
         title: "RPG Character Manager",
-        description:
+        descriptionUser:
+          "A professional tool for tabletop games that allows instant creation, editing, and calculation of character stats. It eliminates paper routine by automatically computing all characteristic bonuses on the fly.",
+        descriptionTech:
           "Data Management Tool. Handling complex nested data structures, on-the-fly form validation, dynamic calculations, and full keyboard navigation support (:focus-visible).",
         tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
         demoUrl: "https://github.io",
@@ -186,40 +207,48 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       },
       {
         title: "Pet Project #4",
-        description:
+        descriptionUser:
           "Designing and developing the architecture of the next MVP service.",
+        descriptionTech: "Architectural planning.",
         tags: ["In Development"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
         title: "Pet Project #5",
-        description:
+        descriptionUser:
           "Integrating additional tools and expanding the solution stack.",
+        descriptionTech: "Architectural planning.",
         tags: ["In Development"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
         title: "Commercial Contract",
-        description:
-          "Business card website for a construction and installation team. Frontend architecture development tailored for business requirements. Process optimization and scaling.",
+        descriptionUser:
+          "Developing a scalable frontend interface tailored for custom business requirements. Optimization of internal company processes.",
+        descriptionTech:
+          "Frontend architecture development for a commercial product. API integration, resilience control, and code quality maintenance according to specifications.",
         tags: ["Commercial Contract"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
         title: "Commercial Contract",
-        description:
-          "Grooming salon. Commercial product interface implementation. API integration and resilience control.",
+        descriptionUser:
+          "Integrating client-facing services, designing user interaction logic, and ensuring web application stability under heavy load conditions.",
+        descriptionTech:
+          "Commercial product interface implementation, managing secure API data streams, and UI component performance optimization.",
         tags: ["Commercial Contract"],
         demoUrl: "#",
         isPlaceholder: true,
       },
       {
         title: "Commercial Contract",
-        description:
-          "Client service development according to the customer's technical specification. Code quality control.",
+        descriptionUser:
+          "Creating a resilient web solution based on customer technical specifications with a focus on high interface response speed and end-user experience.",
+        descriptionTech:
+          "Corporate service client-side development, code base auditing, rendering optimization, and legacy structure refactoring.",
         tags: ["Commercial Contract"],
         demoUrl: "#",
         isPlaceholder: true,

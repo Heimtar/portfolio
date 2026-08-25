@@ -120,3 +120,31 @@
     box-shadow: 0 0 0 0 rgba(197, 168, 128, 0);
   }
 }
+
+/* Старый класс .description удали! Добавляем эти новые: */
+
+.descriptionUser {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main); /* Яркий белый цвет для легкого чтения клиентом */
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.techDivider {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-gold); /* Наш фирменный золотой маркер */
+  margin: 1.25rem 0 0.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.descriptionTech {
+  font-size: 0.85rem;
+  color: var(
+    --text-muted
+  ); /* Серебристо-серый приглушенный цвет для тех-хардкора */
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
