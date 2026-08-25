@@ -69,7 +69,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
 
     projects: [
       {
-        title: "Crypto Dashboard",
+        title: "Крипто Дашборд",
         descriptionUser:
           "Удобный финансовый терминал для отслеживания стоимости криптовалют в реальном времени. Помогает инвесторам быстро анализировать рынок, видеть изменения цен на наглядных графиках и рассчитывать прибыль без сложных таблиц.",
         descriptionTech:
@@ -79,7 +79,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
-        title: "Smart Habit Tracker",
+        title: "Умный трекер привычек",
         descriptionUser:
           "Интерактивный трекер привычек с элементами игры. Мотивирует пользователей не бросать рутинные задачи, превращая ежедневные полезные действия в опыт и прокачку виртуального персонажа, наглядно показывая прогресс за недели.",
         descriptionTech:
@@ -89,7 +89,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
-        title: "RPG Character Manager",
+        title: "Менеджер персонажей",
         descriptionUser:
           "Профессиональный инструмент для настольных игр, позволяющий мгновенно создавать, редактировать и рассчитывать параметры игровых персонажей. Избавляет от бумажной рутины, автоматически вычисляя все бонусы характеристик на лету.",
         descriptionTech:
