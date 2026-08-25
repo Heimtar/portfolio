@@ -85,8 +85,30 @@ function App() {
           <BentoCard>
             <div>
               <h2 className={styles.sectionTitle}>{t.approach.title}</h2>
-              <p className={styles.text}>{t.approach.description}</p>
+              <p className={styles.text}>{t.approach.descriptionUser}</p>
             </div>
+            <div
+              style={{
+                fontFamily: "monospace",
+                fontSize: "0.75rem",
+                fontWeight: 600,
+                color: "var(--accent-gold)",
+                margin: "1.25rem 0 0.5rem 0",
+                letterSpacing: "0.05em",
+              }}
+            >
+              // Engineering Code Standards:
+            </div>
+            <p
+              className={styles.text}
+              style={{
+                fontSize: "0.85rem",
+                color: "var(--text-muted)",
+                lineHeight: "1.6",
+              }}
+            >
+              {t.approach.descriptionTech}
+            </p>
             <div>
               <div
                 style={{

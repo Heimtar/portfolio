@@ -21,7 +21,8 @@ export interface TranslationSchema {
   };
   approach: {
     title: string;
-    description: string;
+    descriptionUser: string;
+    descriptionTech: string;
     stackTitle: string;
   };
   projectsTitle: string;
@@ -45,14 +46,16 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       title: "Привет, я ",
       accentName: "Роман",
       description:
-        "Junior+ Frontend Разработчик. Специализируюсь на реализации сложной бизнес-логики, управлении асинхронными потоками данных и быстрой сборке MVP-решений. Фокусируюсь на производительности и строгих стандартах разработки.",
+        "Frontend-разработчик. Создаю современные, быстрые сайты и веб-приложения под ключ, которые помогают бизнесу привлекать клиентов и автоматизировать продажи. Специализируюсь на быстрой сборке MVP (первых рабочих версий продуктов) и реализации удобных интерфейсов. Помогаю перевести ваши бизнес-задачи на понятный язык программного кода.",
       btnResume: "Скачать резюме PDF",
       btnContact: "Написать на Email",
     },
     approach: {
       title: "Инженерный подход",
-      description:
-        "Мой приоритет — чистый, типизированный код, который масштабируется под задачи бизнеса. Изолирую логику в кастомных хуках, соблюдаю стандарты доступности (A11y) и веду репозитории по стандарту Conventional Commits.",
+      descriptionUser:
+        "Мой приоритет — разработка надежных решений, которые будут стабильно работать под нагрузкой и легко расширяться при росте вашего бизнеса. Пишу понятный, задокументированный код, строго соблюдаю дедлайны, всегда нахожусь на связи и сдаю проекты, готовые к продвижению в Яндексе и Google.",
+      descriptionTech:
+        "Изолирую бизнес-логику в кастомных React-хуках, гарантирую отсутствие утечек памяти, соблюдаю стандарты доступности (A11y :focus-visible) и веду репозитории по строгому стандарту Conventional Commits.",
       stackTitle: "Ключевой стек",
     },
     projectsTitle: "Проекты и кейсы",
@@ -63,6 +66,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       cta: "Обсудить проект",
       location: "Локация: Архангельск. GMT+3, Удаленная работа",
     },
+
     projects: [
       {
         title: "Crypto Dashboard",
@@ -150,20 +154,23 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       "Ищете надежного разработчика для реализации MVP или усиления команды? Напишите мне на почту, отправьте ТЗ или ваши пожелания — я оперативно изучу задачу и предложу техническое решение.",
     modalBtn: "Отправить ТЗ / Написать",
   },
+
   en: {
     hero: {
       badge: "● Available for commercial contracts",
       title: "Hi, I am ",
       accentName: "Roman",
       description:
-        "Junior+ Frontend Developer. Specialized in implementing complex business logic, managing asynchronous data streams, and rapid MVP development. Focused on performance and strict engineering standards.",
+        "Frontend Developer. I build modern, fast websites and web applications from scratch, helping businesses attract clients and automate sales. I specialize in rapid MVP development and creating user-friendly interfaces, translating your business logic into clean, working code.",
       btnResume: "Download Resume PDF",
       btnContact: "Send Email",
     },
     approach: {
       title: "Engineering Approach",
-      description:
-        "My priority is clean, typed code that scales efficiently to meet business needs. I design architecture by isolating logic into custom hooks, adhere to accessibility standards (A11y), and maintain repositories using the Conventional Commits standard.",
+      descriptionUser:
+        "My priority is developing reliable solutions that run smoothly under load and scale seamlessly as your business grows. I write clean, well-documented code, strictly adhere to deadlines, maintain transparent communication, and deliver SEO-ready web products.",
+      descriptionTech:
+        "Isolate business logic inside custom React hooks, ensure no memory leaks, comply with accessibility standards (A11y :focus-visible), and manage repositories via strict Conventional Commits workflow.",
       stackTitle: "Key Stack",
     },
     projectsTitle: "Projects & Case Studies",
