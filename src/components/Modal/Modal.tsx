@@ -22,7 +22,7 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, descriptio
         <div className={styles.badge}>// Commercial Offer</div>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>{description}</p>
-        <a href="mailto:your-email@example.com" className={styles.actionBtn} onClick={onClose}>
+        <a href="mailto:workmail040324@gmail.com" className={styles.actionBtn} onClick={onClose}>
           {btnText}
         </a>
       </div>

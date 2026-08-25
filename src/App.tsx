@@ -73,7 +73,7 @@ function App() {
                 {t.hero.btnResume}
               </a>
               <a
-                href="mailto:your-email@example.com"
+                href="mailto:workmail040324@gmail.com"
                 className={`${styles.btn} ${styles.secondary}`}
               >
                 {t.hero.btnContact}
@@ -225,13 +225,13 @@ function App() {
               </div>
               <div className={styles.footerLinks}>
                 <a
-                  href="mailto:your-email@example.com"
+                  href="mailto:workmail040324@gmail.com"
                   className={styles.footerLink}
                 >
                   Email
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Heimtar"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={styles.footerLink}

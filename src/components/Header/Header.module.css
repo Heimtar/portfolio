@@ -7,15 +7,15 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 1.5rem auto;
-  
+
   /* Изолируем контекст и выделяем ровно 1px под бегущую рамку */
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   padding: 1px;
   z-index: 10;
-  
+
   /* Убираем старый border, теперь рамка формируется градиентом */
-  border: none; 
+  border: none;
 }
 
 /* Внутренняя подложка, которая перекрывает центр вращения и возвращает паддинги */
@@ -34,48 +34,42 @@
 
 /* СЛОЙ 1: Яркая, концентрированная бегущая рамка */
 .header::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
-  
-  /* Плотный конический градиент: золото занимает больше пространства для максимальной яркости */
-  background: conic-gradient(
-    from 0deg,
-    transparent 10%,
-    var(--accent-gold) 30%,
-    var(--accent-gold-hover) 50%,
-    var(--accent-gold) 70%,
-    transparent 90%
+
+  /* Статичный линейный градиент по контуру */
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold) 0%,
+    var(--card-border) 50%,
+    var(--accent-gold-hover) 100%
   );
-  animation: rotateHeaderGlow 6s linear infinite; /* Плавное вращение за 6 секунд */
 }
 
 /* СЛОЙ 2: Тонкое, но концентрированное неоновое свечение строго под рамкой */
 .header::after {
-  content: '';
+  content: "";
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 0;
   pointer-events: none;
-  background: conic-gradient(
-    from 0deg,
-    transparent 10%,
-    var(--accent-gold) 30%,
-    var(--accent-gold-hover) 50%,
-    var(--accent-gold) 70%,
-    transparent 90%
+  background: linear-gradient(
+    135deg,
+    var(--accent-gold) 0%,
+    transparent 50%,
+    var(--accent-gold-hover) 100%
   );
-  filter: blur(12px); /* Уменьшили радиус размытия, чтобы неон сидел плотно вокруг рамки */
-  opacity: 0.6; /* Подняли плотность свечения для сочности */
-  animation: rotateHeaderGlow 6s linear infinite;
+  filter: blur(8px);
+  opacity: 0.4;
 }
 
 .logo {
@@ -92,11 +86,27 @@
 .navBlock {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
+}
+.navLink,
+.navLink:visited {
+  font-size: 0.8rem;
+  font-weight: 600;
+  /* Принудительно ставим наш серебристо-серый цвет из переменных */
+  color: var(--text-muted) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none; /* Убираем стандартное подчеркивание */
+  transition: var(--transition-smooth);
+}
+
+/* При наведении ссылка плавно загорается золотом */
+.navLink:hover {
+  color: var(--accent-gold-hover) !important;
 }
 
 .writeLink {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -165,7 +175,7 @@
 }
 
 @media (max-width: 600px) {
-  .navBlock {
-    gap: 0.75rem;
+  .navBlock .navLink {
+    display: none;
   }
 }

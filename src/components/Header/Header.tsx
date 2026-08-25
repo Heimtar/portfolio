@@ -13,8 +13,14 @@ export const Header: React.FC = () => {
         </div>
         <div className={styles.navBlock}>
           {/* Новая прямая B2B ссылка для связи */}
-          <a href="mailto:your-email@example.com" className={styles.writeLink}>
-            {language === "ru" ? "Написать" : "Contact"}
+          <a href="#personal" className={styles.navLink}>
+            {language === "ru" ? "Пет-проекты" : "Pet Projects"}
+          </a>
+          <a href="#commercial" className={styles.navLink}>
+            {language === "ru" ? "Коммерция" : "Commercial"}
+          </a>
+          <a href="#contacts" className={styles.navLink}>
+            {language === "ru" ? "Контакты" : "Contacts"}
           </a>
           <button
             onClick={toggleLanguage}
