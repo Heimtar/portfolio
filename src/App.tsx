@@ -5,7 +5,9 @@ import { BentoGrid } from "./components/BentoGrid/BentoGrid";
 import { BentoCard } from "./components/BentoCard/BentoCard";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
 import { Modal } from "./components/Modal/Modal";
+import { ScrollToTop } from "./components/ScrollToTop/ScrollToTop";
 import { useLanguage } from "./context/useLanguage";
+
 import styles from "./App.module.css";
 
 function App() {
@@ -267,6 +269,7 @@ function App() {
           </BentoCard>
         </BentoGrid>
       </main>
+      <ScrollToTop />
     </div>
   );
 }
