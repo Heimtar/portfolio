@@ -16,6 +16,11 @@
   padding: 0;
 }
 
+html {
+  /* Включаем нативный плавный скролл для всей страницы */
+  scroll-behavior: smooth !important;
+}
+
 body {
   background-color: var(--bg-color) !important; /* Принудительно красим фон */
   color: var(--text-main);

@@ -152,7 +152,7 @@ function App() {
 
           {/* ПЛИТКИ 3-10: ЦИКЛ ПО ПРОЕКТАМ ИЗ НАШЕЙ БАЗЫ ДАННЫХ */}
           {t.projects.map((project, index) => {
-            // Флаг: проверяем, является ли текущий проект ПЕРВЫМ коммерческим в массиве
+            // Проверяем, является ли текущий проект ПЕРВЫМ коммерческим в массиве
             // В нашей структуре данных коммерческие контракты начинаются с 5-го индекса (после 5 петов)
             const isFirstCommercial = index === 5;
             const isFirstPersonal = index === 0;
@@ -162,6 +162,7 @@ function App() {
                 {/* Заголовок перед самым первым пет-проектом */}
                 {isFirstPersonal && (
                   <div
+                    id="personal"
                     className={styles.span3}
                     style={{ padding: "1rem 0 0.5rem 0" }}
                   >
@@ -182,6 +183,7 @@ function App() {
                 {/* Полноширинный разделитель перед первым коммерческим проектом */}
                 {isFirstCommercial && (
                   <div
+                    id="commercial"
                     className={styles.span3}
                     style={{
                       padding: "2rem 0 0.5rem 0",
