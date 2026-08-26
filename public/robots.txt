@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Указываем карту сайта для роботов
-Sitemap: https://heimtar.github.io/portfolio/
