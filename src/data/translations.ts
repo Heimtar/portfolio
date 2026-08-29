@@ -100,13 +100,14 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
       },
       // Заглушки личных проектов
       {
-        title: "Личный проект #4",
+        title: "Кастомный аудиоплеер и визуализатор",
         descriptionUser:
-          "Проектирование и разработка архитектуры следующего MVP-сервиса.",
-        descriptionTech: "Архитектурное планирование.",
-        tags: ["В разработке"],
-        demoUrl: "#",
-        isPlaceholder: true,
+          "Музыкальный плеер с живым эквалайзером, прыгающим в такт музыке. Включает бесшовное переключение треков, умный режим тишины с памятью громкости и полностью адаптирован под мобильные устройства.",
+        descriptionTech:
+          "Аудио-движок на Web Audio API (GainNode) с интерполяцией громкости для ликвидации цифрового хруста. Отрисовка частот (AnalyserNode) изолирована в Canvas API через requestAnimationFrame для стабильных 60+ FPS.",
+        tags: ["React 19", "Web Audio API", "Canvas API", "Vite"],
+        demoUrl: "https://github.io",
+        codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
         title: "Личный проект #5",
@@ -213,13 +214,14 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
       },
       {
-        title: "Pet Project #4",
+        title: "Custom Audio Player & Visualizer",
         descriptionUser:
-          "Designing and developing the architecture of the next MVP service.",
-        descriptionTech: "Architectural planning.",
-        tags: ["In Development"],
-        demoUrl: "#",
-        isPlaceholder: true,
+          "A music player featuring a live equalizer that bounces to the beat. Includes seamless track switching, a smart mute mode with volume memory, and full mobile responsiveness.",
+        descriptionTech:
+          "Audio engine powered by Web Audio API (GainNode) with volume interpolation to eliminate digital crackling. Frequency rendering (AnalyserNode) is isolated within Canvas API via requestAnimationFrame for stable 60+ FPS.",
+        tags: ["React 19", "Web Audio API", "Canvas API", "Vite"],
+        demoUrl: "https://github.io",
+        codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
         title: "Pet Project #5",
