@@ -110,13 +110,14 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
-        title: "Личный проект #5",
+        title: "Командная Канбан-доска",
         descriptionUser:
-          "Интеграция дополнительных инструментов и расширение стека решений.",
-        descriptionTech: "Архитектурное планирование.",
-        tags: ["В разработке"],
-        demoUrl: "#",
-        isPlaceholder: true,
+          "Многопользовательский клон Trello для управления задачами команды в реальном времени. Включает интерактивное перетаскивание карточек, распределение по колонкам приоритетов и мгновенное создание или удаление задач.",
+        descriptionTech:
+          "Реляционная JSON-схема с нормализацией связей колонок и карточек. Облачная синхронизация в реальном времени реализована через WebSocket-слушатель Firebase Firestore (onSnapshot), а паттерн Optimistic UI полностью устраняет задержки интерфейса при Drag-and-Drop.",
+        tags: ["React 18", "Firebase", "Firestore", "Drag-and-Drop", "Vite"],
+        demoUrl: "https://kanban-desk-one.vercel.app/",
+        codeUrl: "https://github.com/Heimtar/kanban-desk.git",
       },
       // Психологические триггеры - коммерческие контракты
       {
@@ -224,13 +225,14 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
-        title: "Pet Project #5",
+        title: "Team Kanban Board",
         descriptionUser:
-          "Integrating additional tools and expanding the solution stack.",
-        descriptionTech: "Architectural planning.",
-        tags: ["In Development"],
-        demoUrl: "#",
-        isPlaceholder: true,
+          "A multi-user Trello clone for real-time team project management. Features interactive card dragging, categorization by priority columns, and instant task creation or deletion.",
+        descriptionTech:
+          "Relational JSON schema with normalized relations between columns and cards. Live cloud synchronization is powered by Firebase Firestore WebSocket listeners (onSnapshot), while the Optimistic UI pattern completely eliminates interface lag during Drag-and-Drop operations.",
+        tags: ["React 18", "Firebase", "Firestore", "Drag-and-Drop", "Vite"],
+        demoUrl: "https://kanban-desk-one.vercel.app/",
+        codeUrl: "https://github.com/Heimtar/kanban-desk.git",
       },
       {
         title: "Commercial Contract",
