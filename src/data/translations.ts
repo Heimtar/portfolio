@@ -75,7 +75,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Финансовый MVP-интерфейс. Двухколоночный Grid, декларативные графики (Recharts), кастомный слой асинхронных данных с кэшированием (TTL) и иммутабельным расчетом PnL без мутации стейта.",
         tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/crypto-dashboard/",
         codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
@@ -85,7 +85,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "SaaS-трекер с геймификацией. Отказоустойчивый расчет временных интервалов и стриков (date-fns), RPG-механика прогрессии, ленивая инициализация localStorage и защита от всплытия событий.",
         tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/smart-habit-tracker/",
         codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
@@ -95,7 +95,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Инструмент управления комплексными структурами данных. Валидация форм на лету, динамический расчет зависимых параметров и полная поддержка доступности для управления с клавиатуры (:focus-visible).",
         tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/rpg-character-manager/",
         codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
       },
       // Заглушки личных проектов
@@ -106,7 +106,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Аудио-движок на Web Audio API (GainNode) с интерполяцией громкости для ликвидации цифрового хруста. Отрисовка частот (AnalyserNode) изолирована в Canvas API через requestAnimationFrame для стабильных 60+ FPS.",
         tags: ["React 19", "Web Audio API", "Canvas API", "Vite"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/music-player/",
         codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
@@ -191,7 +191,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Financial Analytics Terminal MVP. Two-column Grid interface, declarative charts (Recharts), a custom asynchronous data layer with caching (TTL), and immutable PnL mathematical calculations.",
         tags: ["React 18", "JavaScript (ES6+)", "Recharts", "CSS Modules"],
-        demoUrl: "https://github.io",
+         demoUrl: "https://heimtar.github.io/crypto-dashboard/",
         codeUrl: "https://github.com/Heimtar/crypto-dashboard.git",
       },
       {
@@ -201,7 +201,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Gamified SaaS Habit Tracker MVP. Resilient calculation of time intervals and streaks (date-fns), RPG user progression mechanics, lazy initialization of localStorage, and event propagation protection.",
         tags: ["React 18", "JavaScript (ES6+)", "date-fns", "CSS Modules"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/smart-habit-tracker/",
         codeUrl: "https://github.com/Heimtar/smart-habit-tracker.git",
       },
       {
@@ -211,7 +211,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Data Management Tool. Handling complex nested data structures, on-the-fly form validation, dynamic calculations, and full keyboard navigation support (:focus-visible).",
         tags: ["React 18", "JavaScript (ES6+)", "Vite", "A11y"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/rpg-character-manager/",
         codeUrl: "https://github.com/Heimtar/rpg-character-manager.git",
       },
       {
@@ -221,7 +221,7 @@ export const translations: Record<"ru" | "en", TranslationSchema> = {
         descriptionTech:
           "Audio engine powered by Web Audio API (GainNode) with volume interpolation to eliminate digital crackling. Frequency rendering (AnalyserNode) is isolated within Canvas API via requestAnimationFrame for stable 60+ FPS.",
         tags: ["React 19", "Web Audio API", "Canvas API", "Vite"],
-        demoUrl: "https://github.io",
+        demoUrl: "https://heimtar.github.io/music-player/",
         codeUrl: "https://github.com/Heimtar/music-player.git",
       },
       {
